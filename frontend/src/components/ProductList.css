@@ -1,0 +1,17 @@
+/* Remove old grid styles */
+.product-list-wrapper {
+    width: 100%;
+}
+
+.product-swiper {
+    width: 100%;
+    padding-bottom: 2rem !important;
+    /* Space for shadow/hover */
+    overflow: visible !important;
+    /* Allow items to be seen hitting the right edge if needed, or stick to hidden */
+}
+
+.swiper-slide {
+    height: auto;
+    /* Ensure full height */
+}

@@ -1,0 +1,102 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    /* Let grid gap handle spacing mostly, or add inner padding if card bg needed */
+}
+
+.product-image-link {
+    width: 100%;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.product-image {
+    width: 100%;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    background-color: #f0f0f0;
+    display: block;
+    /* Ensure no inline gap */
+}
+
+.product-title {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.product-rating {
+    color: #fca903;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+}
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 50px;
+    padding: 0.1rem 0.4rem;
+    background-color: transparent;
+}
+
+.quantity-btn {
+    padding: 0 0.4rem;
+    background: none;
+    color: #999;
+    font-size: .8rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.quantity-btn:hover {
+    color: var(--black);
+    opacity: 1;
+}
+
+.quantity-value {
+    padding: 0 0.2rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    /* REDUCIDO: Fuente del número más pequeña */
+    min-width: 1.2rem;
+    /* REDUCIDO: Ancho mínimo del número */
+    text-align: center;
+    color: var(--black);
+}
+
+.add-to-cart-btn {
+    flex: 1;
+    background-color: var(--blue);
+    color: white;
+    font-size: .6rem;
+    border-radius: 50px;
+    padding: 0.5rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    border: none;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--black);
+}

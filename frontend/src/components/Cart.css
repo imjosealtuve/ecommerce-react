@@ -1,0 +1,220 @@
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    animation: blurIn 0.4s ease-out forwards;
+}
+
+.cart-sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 420px;
+    background: var(--white);
+    z-index: 1001;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.08);
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    animation: slideZoomIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform-origin: right center;
+}
+
+@keyframes blurIn {
+    from {
+        backdrop-filter: blur(0px);
+        background: rgba(0, 0, 0, 0);
+    }
+
+    to {
+        backdrop-filter: blur(6px);
+        background: rgba(0, 0, 0, 0.1);
+        /* Slight darken for contrast */
+    }
+}
+
+@keyframes blurOut {
+    from {
+        backdrop-filter: blur(6px);
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    to {
+        backdrop-filter: blur(0px);
+        background: rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes slideZoomIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes slideZoomOut {
+    from {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(100%) scale(0.95);
+    }
+}
+
+.cart-overlay.closing {
+    animation: blurOut 0.4s ease-out forwards;
+}
+
+.cart-sidebar.closing {
+    animation: slideZoomOut 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.cart-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.close-btn {
+    background: none;
+    padding: 0;
+    color: #999;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    background-color: #f5f5f5;
+    color: var(--black);
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 0.5rem;
+    /* Space for scrollbar */
+}
+
+.cart-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    align-items: center;
+    background-color: var(--white);
+}
+
+.cart-item-image {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 12px;
+    background-color: #f8f8f8;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-name {
+    margin: 0 0 0.25rem 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.cart-item-price {
+    color: var(--blue);
+    font-weight: 700;
+    margin-top: 4px;
+    font-size: 0.95rem;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: #999;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.icon-btn:hover {
+    color: #ff4444;
+}
+
+.cart-footer {
+    margin-top: 2rem;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 1.5rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+.summary-row.total {
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--black);
+}
+
+.pay-btn {
+    width: 100%;
+    background-color: var(--blue);
+    color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.save-cart-btn {
+    width: 100%;
+    background-color: white;
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+}

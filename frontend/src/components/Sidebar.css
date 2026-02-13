@@ -1,0 +1,40 @@
+.sidebar {
+    width: 100%;
+    flex: 0 0 25%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 2rem;
+    gap: 0.25rem;
+    /* Tighter spacing */
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 12px;
+    padding: 0.675rem 1.5rem;
+    /* Slightly smaller padding */
+    border-radius: 10px;
+    /* Pill shape */
+    background-color: transparent;
+    color: var(--gray);
+    text-decoration: none;
+    font-weight: 300;
+    transition: all 0.2s;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+.sidebar-link.active {
+    background-color: var(--black);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.sidebar-link:hover:not(.active) {
+    background-color: #f5f5f5;
+    color: var(--black);
+}
