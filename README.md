@@ -1,63 +1,86 @@
-# E-commerce React + Django Project
+## Si quieres ahorrarte la instalación, puedes ver el ecommerce en shop.imjosealtuve.com
 
-This project is a full-stack e-commerce application using React (Vite) for the frontend and Django (DRF) for the backend.
+# 🛒 E-commerce Fullstack (React + Django)
 
-## Prerequisites
+Una aplicación de comercio electrónico completa construida con **Django REST Framework** en el backend y **React (Vite)** en el frontend. El proyecto incluye gestión de productos, carrito de compras y autenticación.
 
-- Python 3.8+
-- Node.js 18+
 
-## setup
+---
 
-### Backend
+## 📋 Requisitos Previos
 
-1.  Navigate to the backend directory:
-    ```bash
-    cd backend
-    ```
+Asegúrate de tener instalado:
+* [Python](https://www.python.org/) (v3.9 o superior)
+* [Node.js](https://nodejs.org/) (v16 o superior)
+* [Git](https://git-scm.com/)
 
-2.  Create a virtual environment:
-    ```bash
-    python -m venv .venv
-    ```
+---
 
-3.  Activate the virtual environment:
-    - Windows: `.venv\Scripts\activate`
-    - Mac/Linux: `source .venv/bin/activate`
+## 🚀 Guía de Instalación
 
-4.  Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+Sigue estos pasos para levantar el proyecto localmente con datos de prueba.
 
-5.  Run migrations:
-    ```bash
-    python manage.py migrate
-    ```
+### 1. Clonar el repositorio
+```bash
+git clone [https://github.com/imjosealtuve/ecommerce-react.git](https://github.com/imjosealtuve/ecommerce-react.git)
+cd ecommerce-react
+2. Configuración del Backend (API)
+El backend maneja la base de datos y la lógica.
 
-6.  (Optional) Seed database:
-    ```bash
-    python populate_db.py
-    ```
+Bash
+cd backend
 
-7.  Start the server:
-    ```bash
-    python manage.py runserver
-    ```
+# 1. Crear entorno virtual
+python -m venv venv
 
-### Frontend
+# 2. Activar entorno virtual
+# En Windows:
+.\venv\Scripts\activate
+# En Mac/Linux:
+source venv/bin/activate
 
-1.  Navigate to the frontend directory:
-    ```bash
-    cd frontend
-    ```
+# 3. Instalar dependencias
+pip install -r requirements.txt
 
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
+# 4. Migrar la base de datos
+python manage.py migrate
 
-3.  Start the development server:
-    ```bash
-    npm run dev
-    ```
+# 5. Cargar datos de prueba (Productos y Usuarios)
+python manage.py loaddata datos_iniciales.json
+
+# 6. Iniciar el servidor
+python manage.py runserver
+El backend correrá en: http://localhost:8000
+
+3. Configuración del Frontend (Cliente)
+Abre una nueva terminal en la raíz del proyecto.
+
+Bash
+cd frontend
+
+# 1. Instalar dependencias
+npm install
+
+# 2. Iniciar servidor de desarrollo
+npm run dev
+El frontend correrá en: http://localhost:5173
+
+## 🔐 Acceso al Panel de Administración (Backend)
+
+Este proyecto no requiere registro de usuarios en el frontend. Sin embargo, cuenta con un panel administrativo para gestionar productos y la base de datos.
+
+Para acceder, ve a: `http://localhost:8000/admin`
+
+* **Usuario (Superuser):** admin  <-- (Pon aquí el usuario que TÚ creaste)
+* **Contraseña:** admin123      <-- (Pon aquí la clave que TÚ creaste)
+
+*(Nota: Estas credenciales corresponden al superusuario incluido en el archivo `datos_iniciales.json`)*
+
+🛠 Tecnologías
+Frontend: React, Vite, CSS Modules.
+
+Backend: Python, Django, Django REST Framework.
+
+Base de Datos: SQLite (Entorno de desarrollo).
+
+Desarrollado por Jose Altuve
